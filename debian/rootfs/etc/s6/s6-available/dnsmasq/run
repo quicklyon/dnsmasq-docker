@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# shellcheck disable=SC1091
+
+[ -n "${DEBUG:+1}" ] && set -x
+
+#===============#
+#  DNSMASQ  #
+#===============#
+export HTTP_USER=${HTTP_USER:-admin}
+export HTTP_PASS=${HTTP_PASS:-qu1ck0n-dnsmasq}
+
+[ ! -f "/data/dnsmasq.conf" ] && (
+  cp -a /etc/dnsmasq.conf.tpl /data/dnsmasq.conf
+)
+
+ln -s /data/dnsmasq.conf /etc/dnsmasq.conf
+
+exec /usr/local/bin/webproc -c /etc/dnsmasq.conf -- dnsmasq --keep-in-foreground

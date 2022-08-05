@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  dnsmasq:
+    image: hub.qucheng.com/app/dnsmasq:${TAG:-latest}
+    container_name: dnsmasq
+    volumes:
+      - data:/data
+    ports:
+      - '8080:8080'
+      - '53:53'
+      - '53:53/udp'
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
+
+# persistence
+volumes:
+  data:
+    driver: local

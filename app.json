@@ -1,0 +1,16 @@
+{
+    "Name": "dnsmasq",
+    "Version": "1.0.0",
+    "Home": "https://thekelleys.org.uk/dnsmasq/",
+    "Maintainer": "ysicing i@ysicing.me",
+    "GitUrl": "https://github.com/quicklyon/quicklyon",
+    "DockerfileUrl": "https://github.com/quicklyon/dnsmasq-docker",
+    "InstallDocUrl": "https://www.qucheng.com/app-install/install-dnsmasq-139.html",
+    "Docker": {
+        "Name": "dnsmasq",
+        "OS": "debian-11",
+        "ImageOS": "easysoft/debian:11",
+        "Repo": "https://hub.docker.com/r/easysoft/dnsmasq",
+        "TagUrl": "https://hub.docker.com/r/easysoft/dnsmasq/tags/"
+    }
+}
